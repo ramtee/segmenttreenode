@@ -10,9 +10,14 @@ class SegmentTreeNode(object):
 
     def __init__(self, arr, start, end):
         # Input checking.
-        if arr is None or len(arr) == 0: raise ValueError('The given array should not be empty.')
-        if start > end: raise ValueError('The given start should not be greater than the given end.')
-        if not (0 <= start and end <= len(arr) - 1): raise ValueError('The given start and given end is out of the range of arr.')
+        if arr is None or len(arr) == 0: 
+            raise ValueError('The given array should not be empty.')
+            
+        if start > end: 
+            raise ValueError('The given start should not be greater than the given end.')
+            
+        if not (0 <= start and end <= len(arr) - 1): 
+            raise ValueError('The given start and given end is out of the range of arr.')
 
         self.start = start
         self.end = end
@@ -54,7 +59,9 @@ class SegmentTreeNode(object):
 
     def _update_value(self, index, new_val):
         # Input checking.
-        if not (self.start <= index <= self.end): raise ValueError('The given index is out of the range or the current segment node.')
+        if not (self.start <= index <= self.end): 
+            raise ValueError('The given index is out of the range or the current segment node.')
+            
         return self._update_value_helper(index, new_val)
 
 
